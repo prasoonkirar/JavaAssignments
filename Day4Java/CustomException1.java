@@ -1,0 +1,10 @@
+package Day4Java;
+
+/**
+ * Created by Prasoon on 17/7/17.
+ */
+public class CustomException1 extends Exception {
+    CustomException1(String str){
+        super(str);
+    }
+}
