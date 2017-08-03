@@ -1,0 +1,82 @@
+>>>java.util.Arrays#asList() 
+
+Adapter pattern is implemeted by this method of Array class of java.util package.
+
+The method asList() takes an array of objects as an argument and returns a list view
+of the specified array. This can be recognized as the method just creates a wrapper that 
+implements List<Integer>, which makes the original array available as a list. Nothing is 
+copied and all, only a single wrapper object is created. Any operation performed an the List 
+wrapper are directly reflected in the array of objects. This method doesn't have any other 
+function or method except the wrapping of array so that it can be used as a List.   
+
+
+
+
+>>>java.util.Collections#list() 
+
+Adapter pattern is implemented by the method list() of collections class of java.util package.
+
+The method list() takes enumeration e as an input and it returns the array list containing the
+elements returned by the specefic enumeration in the order they are returned by the numeration.
+As given in its javadoc this interoprability between legacy APIs that return enumerations and the 
+new APIs that require collections so this acts as an adapter class. 
+
+
+
+
+>>>java.util.Collections#enumeration() 
+
+Adapter pattern is implemented by the method enumeration() of collections class of java.util package. 
+
+The method enumeration() takes the Collection c as an method parameter and returns the specific 
+enumeration over the specified collection. Similarly as this only wraps the collections as enumerations 
+so that they can be used further used as also given in its javadoc that it provides interoperability 
+with the legacy APIs that require an enumeration as input rather than collection.
+
+
+
+
+>>>java.io.InputStreamReader(InputStream) (returns a Reader) 
+
+Adapter pattern is implemented by the constructor InputStreamReader of the InputStreamReader class
+of the java.io package.
+
+The InputStreamReader acts as a bridge from byte streams to character streams: It reads bytes and 
+decodes them into characters using a specified charset.
+For top efficiency, consider wrapping an InputStreamReader within a BufferedReader. For example:
+
+ BufferedReader in = new BufferedReader(new InputStreamReader(System.in)); 
+
+in this System.in provides byte stream where BufferedReader expects character stream so 
+InputStreamReader wraps the byte streams to chracter stream so that buffered reader is 
+capable of using it.
+ 
+
+
+
+>>>java.io.OutputStreamWriter(OutputStream) (returns a Writer)
+
+Similary as above in this also adapter pattern is implemented by the constructor OutputStreamWriter of
+ the OutputStreamWriter class of the java.io package.
+
+Similarly as InputStreamReader we can create a writer basically BufferedWriter but it gives character 
+stream output but the system understands byte stream so it acts as an adapter and wraps the charater
+stream to byte so that the system n print it or output it.
+
+
+
+
+>>>javax.xml.bind.annotation.adapters.XmlAdapter#marshal() and #unmarshal()
+
+Adapter pattern is used in both the method marshal() and unmarshal() of the XmlAdapter class of the
+javax.xml.bind.annotation.adapters package.
+
+As Java types do not map naturally to a XML representation, this abstract class defines methods 
+marshal and unmarshal for adapting a bound type to a value type or vice versa. The methods are 
+invoked by the JAXB binding framework during marshaling and unmarshalling.
+
+
+
+
+
+ 
